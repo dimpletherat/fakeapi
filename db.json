@@ -5,5 +5,5 @@
   "comments": [
     { "id": 1, "body": "some comment", "postId": 1 }
   ],
-  "profile": { "name": "toto" }
+  "init-db-params": { "startDate": "2023-11-18T08:00:00", "endDate":"2023-11-21T18:00:00" }
 }
