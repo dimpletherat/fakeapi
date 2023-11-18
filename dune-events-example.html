@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+area{
+display:block;
+background-color:green
+}
+.hidden{
+display:none
+}
+#myImage {
+  position:relative; width:400px; height:400px; 
+  background-image:url("https://images.twinkl.co.uk/tr/raw/upload/u/ux/usawiki-fish-clownfish_ver_1.jpg");
+  background-size:contain;
+}
+a.area1 {
+  display:block; position:absolute; 
+  top:0; left:0; width:100px; height:100px;
+  border:3px solid red;
+}
+a.area2 {
+  display:block; position:absolute;
+  top:0; left:200px; width:50px; height:50px;
+  border:3px dotted yellow;
+}
+a.area3 {
+  display:block; position:absolute;
+  top:200px; left:200px; width:75px; height:75px;
+  border:3px dotted orange;
+}
+#myImage a span {
+  visibility:hidden;
+}
+</style>
+
+</head>
+<body>
+
+<h1>The map and area elements</h1>
+
+<p>Click on the sun or on one of the planets to watch it closer:</p>
+
+
+
+
+<div id="myImage">
+  <ul>
+    <li><a href="#" onclick="handleClick(1)" class="area1"><span>area1</span></a></li>
+    <li><a href="#" onclick="handleClick(2)" class="area2"><span>area2</span></a></li>
+    <li><a href="#" onclick="handleClick(3)" class="area3"><span>area3</span></a></li>
+  </ul>
+</div>
+
+<div id="content1" class="hidden">
+  <h1>Content 1</h1>
+  <p>fdkj shghfgh sghdfhgk fhgk jfdhsgsy rhgkfsdg jhsdfl</p>
+</div>
+<div id="content2" class="hidden">
+  <h1>Content 2</h1>
+  <p>fdkj shghfgh sghdsk kjfkdhg fsdh hldfsh gksdh glsdhflkgh lsdfhlghsdfklhgl sdfhldfhgk fhgk jfdhsgsy rhgkfsdg jhsdfl</p>
+</div>
+<div id="content3" class="hidden">
+  <h1>Content 3</h1>
+  <p>fdkj shghfgh sghdfhgkmkermtqri tqgsdfig dsmgimfsdi gro isgm sdimg isd fhgk jfdhsgsy rhgkfsdg jhsdfl</p>
+</div>
+
+
+
+<script>
+const imgUrls = [
+	"https://www.aqueon.com/-/media/project/oneweb/aqueon/us/blog/ways-to-know-your-fish-are-happy/fish-are-happy-and-healthy-1.png",
+    "https://images.twinkl.co.uk/tr/raw/upload/u/ux/usawiki-fish-clownfish_ver_1.jpg",
+    "https://www.thesprucepets.com/thmb/Jg5byuBdix-TXtyLk4Xn575K3GE=/6078x0/filters:no_upscale():strip_icc()/low-maintenance-freshwater-fish-4770223-hero-ffb66c229c194e2db4916e88bbd17a15.jpg"
+    ]
+    
+function handleClick(param)
+{
+	const image = document.querySelector('#myImage');
+    image.style.backgroundImage = `url("${imgUrls[param-1]}")`;
+    const content = document.querySelector('#content'+param);
+    if ( content )
+    {
+    console.log( content.classList.remove('hidden' ) )
+    }
+}
+
+</script>
+</body>
+</html>
